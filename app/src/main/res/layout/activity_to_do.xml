@@ -1,0 +1,643 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ToDo">
+
+    <!-- ===================================== -->
+    <!-- CARD CONCLUÍDOS -->
+    <!-- ===================================== -->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/completedCard"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pendingCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- TÍTULO -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#664FA3"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Concluídos"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- SCROLL DOS CONCLUÍDOS -->
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- ITEM 1 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Evento criado" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedEvento"
+                            android:layout_width="45dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Evento concluído"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 2 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Setor financeiro" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedFinanceiro"
+                            android:layout_width="45dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Setor financeiro concluído"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 3 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Orçamento definido" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedOrcamento"
+                            android:layout_width="45dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Orçamento concluído"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 4 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Equipe criada" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedTeam"
+                            android:layout_width="45dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Equipe criada"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 5 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Local definido" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedLocal"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:contentDescription="Local concluído"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 6 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Responsáveis adicionados" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedResponsaveis"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Responsáveis concluídos"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 7 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Equipamentos definidos" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedEquipamentos"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:contentDescription="Equipamentos concluídos"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 8 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Cronograma criado" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCompletedCronograma"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            android:contentDescription="Cronograma concluído"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_trash"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- ===================================== -->
+    <!-- CARD PENDENTES -->
+    <!-- ===================================== -->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pendingCard"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+
+        app:layout_constraintTop_toBottomOf="@id/completedCard"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- TÍTULO -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#664FA3"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Pendentes"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- SCROLL DOS PENDENTES -->
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <!-- ITEM 1 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Criar equipe" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPendingEquipe"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Concluir criar equipe"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_check"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 2 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Definir recursos" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPendingRecursos"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Concluir definir recursos"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:icon="@drawable/ic_check"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 3 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Adicionar membros" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPendingMembros"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Concluir adicionar membros"
+                            android:text=""
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_check"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 4 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Definir orçamento" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPendingOrcamento"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Concluir definir orçamento"
+                            android:text=""
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_check"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 5 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Adicionar equipamentos" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPendingEquipamentos"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Concluir adicionar equipamentos"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:icon="@drawable/ic_check"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 6 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Cadastrar consumíveis" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPendingConsumiveis"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Concluir cadastrar consumíveis"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:icon="@drawable/ic_check"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- ITEM 7 -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="12dp"
+                            android:text="Definir responsáveis" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnPendingResponsaveis"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="Concluir definir responsáveis"
+                            android:text=""
+                            app:cornerRadius="8dp"
+                            app:iconGravity="textStart"
+                            app:iconPadding="0dp"
+                            app:icon="@drawable/ic_check"
+                            app:iconSize="20dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- ===================================== -->
+    <!-- BARRA INFERIOR -->
+    <!-- ===================================== -->
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonOne"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="26dp"
+            android:contentDescription="Home"
+            android:text=""
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_home"
+            app:iconSize="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTwo"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="26dp"
+            android:contentDescription="ToDo List"
+            android:text=""
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_work"
+            app:iconSize="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTree"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="26dp"
+            android:contentDescription="Configs"
+            android:text=""
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_menu_burger"
+            app:iconSize="24dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
