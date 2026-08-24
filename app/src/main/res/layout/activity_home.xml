@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- CARD 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardEvento1"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#f0f"
+                    android:backgroundTint="#664FA3"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Meu Evento"
+                        android:textSize="20sp"
+                        android:textColor="#fff"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#fff"
+                        android:text="Evento de futebol"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#fff"
+                        android:text="24 participantes"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- CARD 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardEvento2"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="12dp"
+                android:clickable="true"
+                android:focusable="true" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="#f0f"
+                    android:backgroundTint="#664FA3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Outro Evento"
+                        android:textSize="20sp"
+                        android:textColor="#fff"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#fff"
+                        android:text="Outro evento"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- CARD 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardEvento3"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="12dp"
+                android:clickable="true"
+                android:focusable="true" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:textColor="#fff"
+                    android:background="#f0f"
+                    android:backgroundTint="#664FA3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Outro Evento"
+                        android:textSize="20sp"
+                        android:textColor="#fff"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Outro evento"
+                        android:textColor="#fff"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datas dos eventos"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
+        app:layout_constraintBottom_toTopOf="@id/calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="223dp" />
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="394dp"
+        android:layout_height="345dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+    <Button
+        android:id="@+id/buttonAdicionar"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:text="Adicionar evento"
+        android:background="@drawable/button_background"
+        app:layout_constraintTop_toBottomOf="@id/calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp" />
+
+    <Button
+        android:id="@+id/buttonParticipar"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:text="Participar de evento"
+        android:background="@drawable/button_background"
+        app:layout_constraintTop_toBottomOf="@id/calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonOne"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:text=""
+        app:icon="@drawable/ic_home"
+        app:iconSize="24dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonTwo"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTwo"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:text=""
+        app:icon="@drawable/ic_work"
+        app:iconSize="24dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@id/buttonOne"
+        app:layout_constraintEnd_toStartOf="@id/buttonTree"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTree"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:text=""
+        app:icon="@drawable/ic_menu_burger"
+        app:iconSize="24dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@id/buttonTwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
