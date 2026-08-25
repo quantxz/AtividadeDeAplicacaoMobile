@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CalendarTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+    <item name="android:textColorPrimary">#000</item>
+    <item name="android:textColorSecondary">#000</item>
+    </style>
+</resources>

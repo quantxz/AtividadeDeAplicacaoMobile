@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="700dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_background"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deseja criar um evento?"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Qual sera o nome do evento?"
+        android:textSize="16sp"
+        android:textColor="#000" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="206dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="Nome do evento"
+        android:inputType="text"
+        android:textSize="14dp"
+        android:textColor="#000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Qual a data do evento?"
+        android:textSize="16sp"
+        android:textColor="#000" />
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="400dp"
+        android:layout_height="312dp"
+        android:layout_marginTop="30dp"
+        android:scaleX="0.9"
+        android:scaleY="0.9"
+        android:theme="@style/CalendarTheme"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+    <LinearLayout
+        android:layout_width="366dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:textColor="#000">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Cancelar" />
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:text="Confirmar" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

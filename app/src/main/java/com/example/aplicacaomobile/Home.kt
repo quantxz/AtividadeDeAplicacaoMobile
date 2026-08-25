@@ -1,16 +1,20 @@
 package com.example.aplicacaomobile
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.text.InputType
+import android.view.InputEvent
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aplicacaomobile.databinding.ActivityHomeBinding
+import org.w3c.dom.Text
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +29,8 @@ class Home : AppCompatActivity() {
             insets
         }
 
+        val numero = (100000..999999).random()
+
         binding.buttonAdicionar.setOnClickListener {
             this.abrirModal()
         }
@@ -34,14 +40,13 @@ class Home : AppCompatActivity() {
             startActivity(intent)
         }
 
-
     }
 
     private fun abrirModal() {
 
         val dialog = Dialog(this)
 
-        dialog.setContentView(R.layout.dialog_confirmacao)
+        dialog.setContentView(R.layout.create_event_modal)
 
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
@@ -53,13 +58,34 @@ class Home : AppCompatActivity() {
         val btnCancelar = dialog.findViewById<Button>(R.id.btnCancelar)
         val btnConfirmar = dialog.findViewById<Button>(R.id.btnConfirmar)
 
-        btnCancelar.setOnClickListener {
+        btnConfirmar.setOnClickListener {
+            val numero = (100000..999999).random()
+
+            val nome = dialog.findViewById<EditText>(R.id.editTextText)
+                .text
+                .toString()
+                .trim()
+
+            if (nome.isEmpty()) {
+                dialog.findViewById<EditText>(R.id.editTextText)
+                    .error = "Este campo é obrigatório"
+
+                return@setOnClickListener
+            }
+
             dialog.dismiss()
+
+            AlertDialog.Builder(this)
+                .setTitle("Evento criado!")
+                .setMessage("Seu código é: $numero\n\n"+
+                        "Não publique este codigo em lugar algum")
+                .setPositiveButton("OK", null)
+                .show()
+
+
         }
 
-        btnConfirmar.setOnClickListener {
-            // ação que você deseja executar
-
+        btnCancelar.setOnClickListener {
             dialog.dismiss()
         }
 
