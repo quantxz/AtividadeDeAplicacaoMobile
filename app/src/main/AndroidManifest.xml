@@ -28,6 +28,10 @@
         <activity
             android:name=".ToDo"
             android:exported="false" />
+        <activity
+            android:name=".event_screen"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
