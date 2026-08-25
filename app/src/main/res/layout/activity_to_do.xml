@@ -7,9 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ToDo">
 
-    <!-- ===================================== -->
-    <!-- CARD CONCLUÍDOS -->
-    <!-- ===================================== -->
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/completedCard"
@@ -29,8 +26,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- TÍTULO -->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,8 +36,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-            <!-- SCROLL DOS CONCLUÍDOS -->
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -55,8 +48,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <!-- ITEM 1 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -86,9 +77,6 @@
 
                     </LinearLayout>
 
-
-                    <!-- ITEM 2 -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -117,9 +105,6 @@
 
                     </LinearLayout>
 
-
-                    <!-- ITEM 3 -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -147,9 +132,6 @@
                             app:iconSize="20dp" />
 
                     </LinearLayout>
-
-
-                    <!-- ITEM 4 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -181,9 +163,6 @@
 
                     </LinearLayout>
 
-
-                    <!-- ITEM 5 -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -211,9 +190,6 @@
                             app:iconSize="20dp" />
 
                     </LinearLayout>
-
-
-                    <!-- ITEM 6 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -243,9 +219,6 @@
 
                     </LinearLayout>
 
-
-                    <!-- ITEM 7 -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -273,9 +246,6 @@
                             app:iconSize="20dp" />
 
                     </LinearLayout>
-
-
-                    <!-- ITEM 8 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -313,11 +283,6 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
-    <!-- ===================================== -->
-    <!-- CARD PENDENTES -->
-    <!-- ===================================== -->
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/pendingCard"
         android:layout_width="0dp"
@@ -337,8 +302,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- TÍTULO -->
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -349,8 +312,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-            <!-- SCROLL DOS PENDENTES -->
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -363,9 +324,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-
-                    <!-- ITEM 1 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -395,9 +353,6 @@
 
                     </LinearLayout>
 
-
-                    <!-- ITEM 2 -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -425,9 +380,6 @@
                             app:iconSize="20dp" />
 
                     </LinearLayout>
-
-
-                    <!-- ITEM 3 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -457,9 +409,6 @@
 
                     </LinearLayout>
 
-
-                    <!-- ITEM 4 -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -487,9 +436,6 @@
                             app:iconSize="20dp" />
 
                     </LinearLayout>
-
-
-                    <!-- ITEM 5 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -519,9 +465,6 @@
 
                     </LinearLayout>
 
-
-                    <!-- ITEM 6 -->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -549,9 +492,6 @@
                             app:iconSize="20dp" />
 
                     </LinearLayout>
-
-
-                    <!-- ITEM 7 -->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -588,11 +528,6 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
-    <!-- ===================================== -->
-    <!-- BARRA INFERIOR -->
-    <!-- ===================================== -->
 
     <LinearLayout
         android:id="@+id/bottomBar"
