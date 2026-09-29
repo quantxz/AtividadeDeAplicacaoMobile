@@ -30,8 +30,9 @@ import androidx.core.app.ActivityCompat
 import android.widget.Toast
 import android.location.LocationListener
 import android.location.Location
+import com.applandeo.materialcalendarview.CalendarView
 import java.util.Locale
-
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener
 class Home : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,12 +88,64 @@ class Home : AppCompatActivity() {
                     .toString()
                     .trim()
 
+                val desc = dialog.findViewById<EditText>(R.id.edtDescricao)
+                    .text
+                    .toString()
+                    .trim()
+
                 if (nome.isEmpty()) {
                     dialog.findViewById<EditText>(R.id.nameEventInput)
                         .error = "Este campo é obrigatório"
 
                     return@setOnClickListener
                 }
+                if (desc.isEmpty()) {
+                    dialog.findViewById<EditText>(R.id.edtDescricao)
+                        .error = "Este campo é obrigatório"
+
+                    return@setOnClickListener
+                }
+
+                val cardDeEvento = layoutInflater.inflate(
+                    R.layout.card_de_evento,
+                    binding.containerEventos,
+                    false
+                )
+                cardDeEvento.findViewById<TextView>(R.id.txtNomeEvento).text = nome
+                cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = desc
+                cardDeEvento.findViewById<TextView>(R.id.txtParticipantesEvento).text = "1"
+                val calendar = dialog.findViewById<CalendarView>(R.id.calendar)
+                var dataSelecionada: Calendar? = null
+
+                calendar.setOnDayClickListener(
+                    object : OnDayClickListener {
+
+                        override fun onDayClick(eventDay: EventDay) {
+                            dataSelecionada = eventDay.calendar
+                        }
+                    }
+                )
+
+                btnConfirmar.setOnClickListener {
+                    if (dataSelecionada != null) {
+
+                        adicionarEvento(
+                            dataSelecionada!!.get(Calendar.DAY_OF_MONTH),
+                            evento
+                        )
+
+                        dialog.dismiss()
+
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Selecione uma data",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                binding.containerEventos.addView(cardDeEvento)
 
                 dialog.dismiss()
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="800dp"
+    android:layout_height="870dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="24dp"
@@ -12,17 +12,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Deseja criar um evento?"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#000"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Qual sera o nome do evento?"
-        android:textSize="16sp"
+        android:textSize="26sp"
         android:textColor="#000" />
 
     <EditText
@@ -33,14 +25,23 @@
         android:hint="Nome do evento"
         android:inputType="text"
         android:textSize="14dp"
+        android:layout_marginTop="5dp"
         android:textColor="#000" />
 
     <EditText
         android:id="@+id/edtLocalizacao"
         android:layout_width="206dp"
         android:layout_height="43dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
         android:hint="Digite o local do evento" />
+
+
+    <EditText
+        android:id="@+id/edtDescricao"
+        android:layout_width="206dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="25dp"
+        android:hint="Descreva o evento" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,14 +51,13 @@
         android:textSize="16sp"
         android:textColor="#000" />
 
-    <CalendarView
+    <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/calendar"
-        android:layout_width="400dp"
-        android:layout_height="312dp"
-        android:layout_marginTop="30dp"
-        android:scaleX="0.9"
-        android:scaleY="0.9"
-        android:theme="@style/CalendarTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="370dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
 
     <LinearLayout
@@ -68,7 +68,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:foregroundGravity="center"
-        android:layout_marginBottom="49dp"
+        android:layout_marginBottom="60dp"
         android:textColor="#000">
 
         <Button
