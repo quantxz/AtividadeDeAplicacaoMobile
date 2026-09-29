@@ -33,6 +33,8 @@ import android.location.Location
 import com.applandeo.materialcalendarview.CalendarView
 import java.util.Locale
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener
+import com.example.aplicacaomobile.databinding.ActivityEventScreenBinding
+
 class Home : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -111,6 +113,10 @@ class Home : AppCompatActivity() {
                     binding.containerEventos,
                     false
                 )
+                cardDeEvento.setOnClickListener {
+                    val intent = Intent(this, event_screen::class.java)
+                    startActivity(intent)
+                }
                 cardDeEvento.findViewById<TextView>(R.id.txtNomeEvento).text = nome
                 cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = desc
                 cardDeEvento.findViewById<TextView>(R.id.txtParticipantesEvento).text = "1"
@@ -133,6 +139,7 @@ class Home : AppCompatActivity() {
                             dataSelecionada!!.get(Calendar.DAY_OF_MONTH),
                             evento
                         )
+
 
                         dialog.dismiss()
 
@@ -201,7 +208,10 @@ class Home : AppCompatActivity() {
                     cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Palestra escolar"
 
                     adicionarEvento(5, evento)
-
+                    cardDeEvento.setOnClickListener {
+                        val intent = Intent(this, event_screen::class.java)
+                        startActivity(intent)
+                    }
                     binding.calendar.setEvents(evento)
 
                     binding.containerEventos.addView(cardDeEvento)
@@ -217,7 +227,10 @@ class Home : AppCompatActivity() {
                     cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Evento da comevap"
 
                     adicionarEvento(15, evento)
-
+                    cardDeEvento.setOnClickListener {
+                        val intent = Intent(this, event_screen::class.java)
+                        startActivity(intent)
+                    }
                     binding.calendar.setEvents(evento)
 
                     binding.containerEventos.addView(cardDeEvento)
@@ -233,7 +246,10 @@ class Home : AppCompatActivity() {
                     cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Reunião de alinhamento"
 
                     adicionarEvento(25, evento)
-
+                    cardDeEvento.setOnClickListener {
+                        val intent = Intent(this, event_screen::class.java)
+                        startActivity(intent)
+                    }
                     binding.calendar.setEvents(evento)
 
                     binding.containerEventos.addView(cardDeEvento)
@@ -249,7 +265,10 @@ class Home : AppCompatActivity() {
                     cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Futebolzin ca rapaziada"
 
                     adicionarEvento(30, evento)
-
+                    cardDeEvento.setOnClickListener {
+                        val intent = Intent(this, event_screen::class.java)
+                        startActivity(intent)
+                    }
                     binding.calendar.setEvents(evento)
 
                     binding.containerEventos.addView(cardDeEvento)
