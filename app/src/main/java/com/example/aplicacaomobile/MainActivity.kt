@@ -24,8 +24,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         binding.loginButton.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
+            if(binding.emailInput.text.toString() == "a@gmail.com" && binding.passwordInput.text.toString() == "senha") {
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+            } else {
+                binding.emailInput.error = "Email invalido"
+                binding.passwordInput.error = "Senha invalida"
+            }
+
         }
     }
 }

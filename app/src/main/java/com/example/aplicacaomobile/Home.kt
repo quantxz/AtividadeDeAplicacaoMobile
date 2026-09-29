@@ -3,25 +3,43 @@ package com.example.aplicacaomobile
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.NumberPicker
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isEmpty
 import com.example.aplicacaomobile.databinding.ActivityHomeBinding
+import android.graphics.Color
+import java.util.Calendar
+import com.applandeo.materialcalendarview.CalendarDay
+import com.applandeo.materialcalendarview.EventDay
+import kotlin.collections.mutableListOf
+import android.Manifest
+import android.content.pm.PackageManager
+import android.location.Geocoder
+import android.location.LocationManager
+import androidx.core.app.ActivityCompat
+import android.widget.Toast
+import android.location.LocationListener
+import android.location.Location
+import java.util.Locale
 
 class Home : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val evento = mutableListOf<EventDay>()
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -31,11 +49,11 @@ class Home : AppCompatActivity() {
         val numero = (100000..999999).random()
 
         binding.buttonAdicionar.setOnClickListener {
-            this.abrirModal("Add")
+            this.abrirModal("Add", binding, evento)
         }
 
         binding.buttonParticipar.setOnClickListener {
-            this.abrirModal("Enter")
+            this.abrirModal("Enter", binding, evento)
         }
 
         binding.buttonTwo.setOnClickListener {
@@ -45,7 +63,7 @@ class Home : AppCompatActivity() {
 
     }
 
-    private fun abrirModal(modal: String) {
+    private fun abrirModal(modal: String, binding: ActivityHomeBinding, evento: MutableList<EventDay>) {
 
         val dialog = Dialog(this)
         if(modal == "Add"){
@@ -120,8 +138,74 @@ class Home : AppCompatActivity() {
 
                     return@setOnClickListener
                 }
+                if(code.text.toString() == "987777") {
+                    val cardDeEvento = layoutInflater.inflate(
+                        R.layout.card_de_evento,
+                        binding.containerEventos,
+                        false
+                    )
+                    cardDeEvento.findViewById<TextView>(R.id.txtNomeEvento).text = "Evento 1"
+                    cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Palestra escolar"
+
+                    adicionarEvento(5, evento)
+
+                    binding.calendar.setEvents(evento)
+
+                    binding.containerEventos.addView(cardDeEvento)
+
+                }
+                if(code.text.toString() == "977777") {
+                    val cardDeEvento = layoutInflater.inflate(
+                        R.layout.card_de_evento,
+                        binding.containerEventos,
+                        false
+                    )
+                    cardDeEvento.findViewById<TextView>(R.id.txtNomeEvento).text = "Evento 2"
+                    cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Evento da comevap"
+
+                    adicionarEvento(15, evento)
+
+                    binding.calendar.setEvents(evento)
+
+                    binding.containerEventos.addView(cardDeEvento)
+
+                }
+                if(code.text.toString() == "967777") {
+                    val cardDeEvento = layoutInflater.inflate(
+                        R.layout.card_de_evento,
+                        binding.containerEventos,
+                        false
+                    )
+                    cardDeEvento.findViewById<TextView>(R.id.txtNomeEvento).text = "Evento 3"
+                    cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Reunião de alinhamento"
+
+                    adicionarEvento(25, evento)
+
+                    binding.calendar.setEvents(evento)
+
+                    binding.containerEventos.addView(cardDeEvento)
+
+                }
+                if(code.text.toString() == "957777") {
+                    val cardDeEvento = layoutInflater.inflate(
+                        R.layout.card_de_evento,
+                        binding.containerEventos,
+                        false
+                    )
+                    cardDeEvento.findViewById<TextView>(R.id.txtNomeEvento).text = "Evento 4"
+                    cardDeEvento.findViewById<TextView>(R.id.txtDescricaoEvento).text = "Futebolzin ca rapaziada"
+
+                    adicionarEvento(30, evento)
+
+                    binding.calendar.setEvents(evento)
+
+                    binding.containerEventos.addView(cardDeEvento)
+
+                }
                 dialog.dismiss()
             }
+
+
 
             btnCancelar.setOnClickListener {
                 dialog.dismiss()
@@ -135,4 +219,18 @@ class Home : AppCompatActivity() {
             )
         }
     }
+
+    fun adicionarEvento(dia: Int, evento: MutableList<EventDay>) {
+        val calendar = Calendar.getInstance()
+        calendar.set(2026, Calendar.SEPTEMBER, dia)
+
+        evento.add(
+            EventDay(
+                calendar,
+                R.drawable.ic_evento
+            )
+        )
+    }
+
+
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="700dp"
+    android:layout_height="800dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="24dp"
@@ -35,6 +35,13 @@
         android:textSize="14dp"
         android:textColor="#000" />
 
+    <EditText
+        android:id="@+id/edtLocalizacao"
+        android:layout_width="206dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="5dp"
+        android:hint="Digite o local do evento" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,6 +68,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:foregroundGravity="center"
+        android:layout_marginBottom="49dp"
         android:textColor="#000">
 
         <Button
