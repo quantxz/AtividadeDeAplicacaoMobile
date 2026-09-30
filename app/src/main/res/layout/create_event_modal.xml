@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="870dp"
+    android:layout_height="750dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="24dp"
@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:text="Qual sera o nome do evento?"
         android:textSize="26sp"
         android:textColor="#000" />
@@ -32,7 +32,7 @@
         android:id="@+id/edtLocalizacao"
         android:layout_width="206dp"
         android:layout_height="43dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:hint="Digite o local do evento" />
 
 
@@ -40,13 +40,13 @@
         android:id="@+id/edtDescricao"
         android:layout_width="206dp"
         android:layout_height="43dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:hint="Descreva o evento" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:text="Qual a data do evento?"
         android:textSize="16sp"
         android:textColor="#000" />
@@ -54,7 +54,7 @@
     <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/calendar"
         android:layout_width="wrap_content"
-        android:layout_height="370dp"
+        android:layout_height="320dp"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,12 +63,12 @@
     <LinearLayout
         android:layout_width="366dp"
         android:layout_height="57dp"
-        android:layout_marginTop="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
+        android:foregroundGravity="center"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:foregroundGravity="center"
-        android:layout_marginBottom="60dp"
         android:textColor="#000">
 
         <Button
@@ -86,7 +86,6 @@
             android:text="Confirmar" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>

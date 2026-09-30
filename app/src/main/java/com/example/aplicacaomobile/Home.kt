@@ -158,9 +158,11 @@ class Home : AppCompatActivity() {
 
                 AlertDialog.Builder(this)
                     .setTitle("Evento criado!")
-                    .setMessage("Seu código é: $numero\n\n"+
-                            "Não publique este codigo em lugar algum")
-                    .setPositiveButton("OK", null)
+                    .setPositiveButton("Ver evento") { dialog, _ ->
+                        val intent = Intent(this, event_screen::class.java)
+                        startActivity(intent)
+                        dialog.dismiss()
+                    }
                     .show()
 
 

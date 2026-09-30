@@ -233,7 +233,19 @@
         </LinearLayout>
 
     </HorizontalScrollView>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Codigo do evento"
+        android:textSize="25sp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/CodigoAleatorio"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text=""
+        android:textSize="25sp"
+        android:gravity="center"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
