@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
                 binding.emailInput.error = "Email invalido"
                 binding.passwordInput.error = "Senha invalida"
             }
-
         }
     }
 }
